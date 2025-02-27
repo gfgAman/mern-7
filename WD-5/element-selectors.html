@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element selectors..</title>
+    <style>
+       h1{
+        width: max-content;
+        position: relative;
+        cursor: pointer;
+       }
+       h1::after{
+        content: "";
+        height: 4px;
+        width: 100%;
+        background: linear-gradient(to right,blue,yellow);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+       }
+        h1:hover::after{
+            width: 0%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>hello</h1>
+    
+</body>
+
+</html>
