@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        */ .container {
+            background-color: aqua;
+            width: fit-content;
+            padding: 20px;
+            border: 5px dotted blue;
+            border-radius: 35px;
+        }
+
+        .container-em {
+            font-size: 100px;
+        }
+
+        .child-em {
+            font-size: 2rem;
+        }
+
+        .container-viewport {
+            background-color: red;
+            width: 50vw;
+            height: 50vh;
+
+        }
+
+        .container-percent {
+            background-color: aqua;
+            width: 20rem;
+            height: 20rem;
+        }
+
+        .child-percent {
+            background-color: red;
+            height: 10em;
+            width: 50vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">hello world</div>
+    <div class="container-em">
+        <div class="child-em">hello</div>
+    </div>
+    <div class="container-viewport">
+
+    </div>
+
+    <div class="container-percent">
+        <div class="child-percent"></div>
+    </div>
+</body>
+
+</html>
