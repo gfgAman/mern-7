@@ -6,9 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .child{
+        .parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            /* Space between the children */
+        }
+
+        .child {
             padding: 2rem;
             background-color: red;
+            text-align: center;
+            /* Optional: Centers text inside each child */
+            flex: 1 1 calc(33.33% - 1rem);
+            /* By default, 3 columns */
+            box-sizing: border-box;
+            /* Prevents padding from affecting width */
+        }
+
+        /* Media query for screens 760px or smaller */
+        @media (max-width: 760px) {
+            .child {
+                flex: 1 1 calc(50% - 1rem);
+                /* 2 columns on smaller screens */
+            }
+        }
+
+        /* Media query for screens 480px or smaller */
+        @media (max-width: 480px) {
+            .child {
+                flex: 1 1 100%;
+                /* 1 column on very small screens */
+            }
         }
     </style>
 </head>
@@ -16,7 +46,7 @@
 <body>
     <div class="parent">
         <div class="child">hello</div>
-        <div class="child">developersjcbjsbcujshbaufhcksacuhdsakch</div>
+        <div class="child">developers</div>
         <div class="child">Mern</div>
         <div class="child">Stack</div>
         <div class="child">GFG</div>
