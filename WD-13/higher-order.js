@@ -65,9 +65,9 @@ const arr = [1, 2, 3, 4]
 // const iterate = cart.map()
 
 //destructuring
-const obj = {
-    username:'aman',
-    age:67890
-}
-const {username,age} = obj
-console.log(username,age);
+// const obj = {
+//     username:'aman',
+//     age:67890
+// }
+// const {username,age} = obj
+// console.log(username,age);
