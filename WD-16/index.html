@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .xyz {
+            background-color: green;
+        }
+
+        #abc {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="parent">
+        this is parent container
+        <p id="abc" class="xyz">text1</p>
+        <p id="wer" class="xyz">text2</p>
+        <h1 id="header"></h1> -->
+        <!-- <p id="btn">click me</p>
+        <div id="id"></div> -->
+    <!-- </div> -->
+
+    <!-- //event bubbling -->
+
+    <!-- <div id="parent">parent
+        <div id="child">child
+            <div id="subchild">Subchild</div>
+        </div>
+    </div> -->
+    <div id="parent">
+        <!-- <li class="abc">1</li>
+        <li class="items">2</li>
+        <li class="items">3</li>
+        <li class="items">4</li>
+        <li class="items">5</li>
+        <li class="items">6</li>
+        <li class="items">7</li>
+        <li class="items">8</li>
+        <li class="items">9</li>
+        <li class="items">0</li> -->
+    </div>
+    <script>
+
+        
+        // const subchild = document.getElementById('subchild')
+        // const child = document.getElementById('child')
+        // const parent = document.getElementById('parent')
+        
+        //event bubbling
+        // subchild.addEventListener('click',(e)=>{
+        //     e.stopPropagation()
+        //     console.log(subchild.innerHTML)})
+        // child.addEventListener('click',()=>console.log(child.innerHTML))
+        // parent.addEventListener('click',()=>console.log(parent.innerHTML))
+
+        //event capturing
+        //  subchild.addEventListener('click',()=>{
+            // e.stopPropagation()
+        //     console.log(subchild.innerHTML)},true)
+        // child.addEventListener('click',()=>{console.log(child.innerHTML)},true)
+        // parent.addEventListener('click',()=>{console.log(parent.innerHTML)},true)
+
+
+        // event delegation
+        // const parent = document.getElementById('parent')
+        // parent.addEventListener('click',(e)=>{
+        //     // console.log(e);
+        //     if(e.target.classList.contains('items')){
+        //         console.log(e.target.innerText);
+        //     }
+        // })
+
+
+        //data fetching
+    
+        const fetchData = async()=>{
+
+            const data = await fetch('https://jsonplaceholder.typicode.com/users')
+            const dataJson = await data.json()
+            console.log(dataJson);
+            return dataJson
+        }
+        
+        // console.log(fetchData());
+        
+        fetchData().then(data=>{
+            const parent = document.getElementById('parent')
+
+            data.forEach(({name})=>{
+                const userName = document.createElement('h3')
+                userName.innerText = name
+                parent.appendChild(userName)
+            })
+            
+        }).catch(err=>console.log(err))
+        //concepts
+        // console.log(this);
+        // const obj = {
+        //     name: 'aman',
+        //     func: ()=>{
+        //         console.log(`${this.name}`);
+        //     }
+        // }
+        // obj.func()
+        // let count = 0
+        // const btn =document.getElementById('btn')
+        // btn.addEventListener('click',()=>{
+        //     ++count
+        //     if(count%2===0)
+        //     btn.style.backgroundColor='green'
+        // else btn.style.backgroundColor='red'
+
+        // const h1 = document.createElement('h1')
+        // const del = document.createElement('button')
+        // h1.innerText = 'hello world'
+        // del.innerHTML = 'delete button'
+
+            // document.getElementById('id').appendChild(h1).appendChild(del)
+            
+
+            // console.log('number of times button clicked:',++count);
+        // })
+        // const parent = document.getElementById('parent')
+        
+        // const xyz = document.getElementsByClassName('xyz')
+        // const header = document.getElementById('header')
+        // header.innerText = 'hello world'
+        // parent.style.display = 'flex'
+        // const p = document.getElementsByTagName("p")
+        // console.log(p,'para');
+        // console.log(xyz, 'class');
+        // console.log(abc, 'id');
+        // xyz.style.backgroundColor = 'green'
+        
+    </script>
+</body>
+
+</html>
